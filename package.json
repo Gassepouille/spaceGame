@@ -1,0 +1,9 @@
+{
+	"name": "space_game",
+	"version": "0.0.0",
+	"description": "space_game",
+	"author": "Gassepouille",
+	"dependencies": {
+		"http-server" : "0.10.0"
+	}
+}

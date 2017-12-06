@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>WebGL Experience</title>
+	<script src="vendor/three.js"></script>
+	<script src="js/GamePlayer.js"></script>
+	<script src="js/GameLoop.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+<script>
+	window.onload = (function(){
+		let body = document.querySelector("body")
+		let gamePlayer = new APP.GamePlayer(body);
+		gamePlayer.start();
+	})();
+</script>
+</body>
+</html>
