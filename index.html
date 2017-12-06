@@ -7,7 +7,7 @@
 	<script src="js/GameObject.js"></script>
 	<script src="js/GamePlanet.js"></script>
 	<script src="js/GameEnemy.js"></script>
-	<script src="js/GamePlayer.js"></script>
+	<script src="js/Player.js"></script>
 	<script src="js/GameEngine.js"></script>
 	<script src="js/GameLoop.js"></script>
 	<link rel="stylesheet" href="css/style.css">
@@ -19,8 +19,8 @@
 		let body = document.querySelector("body")
 		let gameEngine = new APP.GameEngine(body);
 		gameEngine.start();
-		let player = new APP.GamePlayer();
-		let planet = new APP.GamePlanet();
+		let player = new APP.Player();
+		let planet = new APP.Planet();
 		setTimeout(()=>{
 			player.killUpdate()
 		},5000)

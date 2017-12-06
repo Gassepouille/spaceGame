@@ -1,6 +1,6 @@
 var APP = APP || {};
 
-APP.GamePlayer = class GamePlayer extends APP.GameObject{
+APP.Player = class Player extends APP.GameObject{
 	constructor(){
 		super();
 	}
