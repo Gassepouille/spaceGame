@@ -26,7 +26,7 @@ APP.GameLoop = class GameLoop {
 		this._pause = !this._pause;
 	}
 	_update(delta, now){
-		this.onUpdateFcts.forEach(function(onUpdateFct){
+		this.onUpdateFcts.forEach((onUpdateFct)=>{
 			onUpdateFct(delta, now);
 		})
 	}

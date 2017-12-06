@@ -4,7 +4,11 @@
 	<meta charset="UTF-8">
 	<title>WebGL Experience</title>
 	<script src="vendor/three.js"></script>
+	<script src="js/GameObject.js"></script>
+	<script src="js/GamePlanet.js"></script>
+	<script src="js/GameEnemy.js"></script>
 	<script src="js/GamePlayer.js"></script>
+	<script src="js/GameEngine.js"></script>
 	<script src="js/GameLoop.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,8 +17,13 @@
 <script>
 	window.onload = (function(){
 		let body = document.querySelector("body")
-		let gamePlayer = new APP.GamePlayer(body);
-		gamePlayer.start();
+		let gameEngine = new APP.GameEngine(body);
+		gameEngine.start();
+		let player = new APP.GamePlayer();
+		let planet = new APP.GamePlanet();
+		setTimeout(()=>{
+			player.killUpdate()
+		},5000)
 	})();
 </script>
 </body>

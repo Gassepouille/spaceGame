@@ -1,54 +1,10 @@
 var APP = APP || {};
 
-APP.GamePlayer = class GamePlayer {
-	constructor(domElement){
-		this._container = domElement;
-		// Renderer
-		this._renderer  = new THREE.WebGLRenderer({
-			antialias  : true,
-			alpha    : true,
-		});
-		this._container.appendChild( this._renderer.domElement );
-		// Engine
-		this._gameLoop = new APP.GameLoop();
-		
-		// Camera + scene
-		this.camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 1000);
-		this.camera.position.set(1,3,1);
-		this.camera.lookAt(new THREE.Vector3(0,0,0));
-	        this.scene = new THREE.Scene();
-
-		
-
-		// render scene
-		this._gameLoop.onUpdateFcts.push((delta,now)=>{
-			this._renderer.render( this.scene, this.camera );
-		})
-
-		// resize
-		this.onWindowResize();
-		window.addEventListener('resize', ()=>{
-	                this.onWindowResize();
-	        }, false)
-
+APP.GamePlayer = class GamePlayer extends APP.GameObject{
+	constructor(){
+		super();
 	}
-	start(){
-		this._gameLoop.start();
-	}
-	stop(){
-		this._gameLoop.stop();
-	}
-	pause(){
-		this._gameLoop.pause();
-	}
-	addUpdate(updateFct){
-		this._gameLoop.onUpdateFcts.push(updateFct);
-	}
-	onWindowResize(){
-		let width  =  window.innerWidth;
-		let height =  window.innerHeight;
-		this.camera.aspect = width / height;
-	        this.camera.updateProjectionMatrix();
-		this._renderer.setSize( width, height );
+	update(){
+		console.log("Im player");
 	}
 }
