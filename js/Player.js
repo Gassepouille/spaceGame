@@ -5,6 +5,6 @@ APP.Player = class Player extends APP.GameObject{
 		super();
 	}
 	update(){
-		console.log("Im player");
+
 	}
 }
