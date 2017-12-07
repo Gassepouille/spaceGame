@@ -14,15 +14,15 @@ APP.GameEngine = class GameEngine {
 		
 		// Camera + scene
 		this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1500);
-		this.camera.position.set(1,1,1);
-		// this.camera.lookAt(new THREE.Vector3(0,1,0));
+		this.camera.position.set(100,100,100);
+		this.camera.lookAt(new THREE.Vector3(0,0,0));
 	        this.scene = new THREE.Scene();
 
 		// render scene
 		this._gameLoop.onUpdateFcts.push((delta,now)=>{
                         // run update of game objects
-			this.camera.rotation.x+=0.005;
-			APP.GameObject.updateAll();
+			// this.camera.rotation.x+=0.005;
+			APP.GameObject.updateAll(delta,now);
 			this._renderer.render( this.scene, this.camera );
 		})
 
