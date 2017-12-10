@@ -13,8 +13,8 @@ APP.GameEngine = class GameEngine {
 		this._gameLoop = new APP.GameLoop();
 		
 		// Camera + scene
-		this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1500);
-		this.camera.position.set(100,100,100);
+		this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 9999999999);
+		this.camera.position.set(0,0,1000);
 		this.camera.lookAt(new THREE.Vector3(0,0,0));
 	        this.scene = new THREE.Scene();
 
