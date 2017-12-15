@@ -4,8 +4,10 @@
 	<meta charset="UTF-8">
 	<title>WebGL Experience</title>
 	<script src="vendor/three.js"></script>
+	<script src="vendor/SimplexNoise.js"></script>
 	<script src="js/GameObject.js"></script>
 	<script src="js/Player.js"></script>
+	<script src="js/MapGenerator.js"></script>
 	<script src="js/Galaxy.js"></script>
 	<script src="js/Star.js"></script>
 	<script src="js/planets/Planet.js"></script>
@@ -19,18 +21,18 @@
 <script>
 	window.onload = (function(){
 		let body = document.querySelector("body")
-		let gameEngine = new APP.GameEngine(body);
-		let scene = gameEngine.scene;
-		gameEngine.start();
+		// let gameEngine = new APP.GameEngine(body);
+		// let scene = gameEngine.scene;
+		// gameEngine.start();
+		// 
+		// let player = new APP.Player();
+		// let galaxy = new APP.Galaxy( "Bokrug", 4, 5, 1000 );
+		// scene.background = galaxy._background;
+		// scene.add(galaxy.object3d);
 		
-		let player = new APP.Player();
-		let galaxy = new APP.Galaxy( "Bokrug", 4, 5, 1000 );
-		scene.background = galaxy._background;
-		scene.add(galaxy.object3d);
-
-		setTimeout(()=>{
-			player.kill()
-		},5000)
+		let parameters = {width:512,height:512, color:"#ff0000"}
+		let mapGenerator = new APP.MapGenerator(parameters);
+		body.appendChild(mapGenerator.canvas);
 	})();
 </script>
 </body>
